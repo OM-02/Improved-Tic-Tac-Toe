@@ -24,11 +24,11 @@ class Tac {
         while (!validInputs) {
             try{
                 System.out.print("Choose a row: ");
-                rowSelect = keyboard.nextInt();
+                rowSelect = keyboard.nextInt() - 1;
                 if (rowSelect > 2) throw new InputMismatchException("That's not a valid row, try again.");
 
                 System.out.print("Choose a column: ");
-                columnSelect = keyboard.nextInt();
+                columnSelect = keyboard.nextInt() - 1;
                 if (columnSelect > 2) throw new InputMismatchException("That's not a valid column, try again.");
 
                 if (board[rowSelect][columnSelect] != 0) throw new InputMismatchException("That space is already taken, try again.");
@@ -103,13 +103,14 @@ class Tac {
     }
 
     static void boardPrinter() {
-        System.out.println(divider);
-        System.out.println(row1);
-        System.out.println(divider);
-        System.out.println(row2);
-        System.out.println(divider);
-        System.out.println(row3);
-        System.out.println(divider);
+        System.out.println("    1   2   3");
+        System.out.println("  " + divider);
+        System.out.println("1 " + row1);
+        System.out.println("  " +divider);
+        System.out.println("2 " + row2);
+        System.out.println("  " + divider);
+        System.out.println("3 " + row3);
+        System.out.println("  " + divider);
         System.out.println("");
     }
 
